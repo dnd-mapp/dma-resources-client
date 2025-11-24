@@ -1,0 +1,20 @@
+# Compiled output
+.angular/
+dist/
+reports/
+
+# Node
+node_modules/
+
+# IDEs and editors
+.idea/*
+!.idea/runConfigurations/
+!.idea/prettier.xml
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*

@@ -1,0 +1,86 @@
+# Default: normalize all text files to LF in the repo
+*                   text eol=lf
+
+# -------------------------------------------------------
+# 1. Text file overrides / explicit types
+# -------------------------------------------------------
+
+# Source code
+*.ts                text eol=lf
+*.js                text eol=lf
+*.mjs               text eol=lf
+*.cjs               text eol=lf
+*.html              text eol=lf
+*.css               text eol=lf
+*.scss              text eol=lf
+*.json              text eol=lf
+*.yaml              text eol=lf
+*.yml               text eol=lf
+*.md                text eol=lf
+*.txt               text eol=lf
+*.env               text eol=lf
+*.sh                text eol=lf
+
+# Configs and dotfiles
+*.editorconfig      text eol=lf
+*.prettierrc        text eol=lf
+*.eslintrc          text eol=lf
+*.eslintignore      text eol=lf
+*.npmrc             text eol=lf
+*.gitignore         text eol=lf
+*.gitattributes     text eol=lf
+*.yml               text eol=lf
+*.yaml              text eol=lf
+*.xml               text eol=lf
+
+# Angular & tooling configs (adjust extensions as you have them)
+angular.json        text eol=lf
+tsconfig*.json      text eol=lf
+package*.json       text eol=lf
+
+# -------------------------------------------------------
+# 2. Binary files (no line-ending conversion, no diffs)
+# -------------------------------------------------------
+
+# Images
+*.png               binary
+*.jpg               binary
+*.jpeg              binary
+*.gif               binary
+*.svg               text
+*.ico               binary
+*.webp              binary
+
+# Fonts
+*.woff              binary
+*.woff2             binary
+*.ttf               binary
+*.otf               binary
+*.eot               binary
+
+# Archives / packaged artifacts
+*.zip               binary
+*.tar               binary
+*.gz                binary
+*.tgz               binary
+*.7z                binary
+
+# Misc binary
+*.pdf               binary
+*.mp4               binary
+*.mp3               binary
+*.mov               binary
+
+# Node / IDE
+*.log               text eol=lf
+*.patch             text eol=lf
+*.bin               binary
+*.psd               binary
+
+# -------------------------------------------------------
+# 3. Lockfiles (keep stable, no EOL mangling)
+# -------------------------------------------------------
+
+package-lock.json   binary
+yarn.lock           binary
+pnpm-lock.yaml      binary

@@ -1,0 +1,27 @@
+# Editor configuration, see https://editorconfig.org
+root = true
+
+[*]
+charset = utf-8
+indent_style = space
+indent_size = 4
+insert_final_newline = true
+trim_trailing_whitespace = true
+end_of_line = lf
+
+# JSON files: match Prettier's 2-space override for package*.json
+[package*.json]
+indent_size = 2
+
+# TypeScript: prefer single quotes in JetBrains IDEs (optional / IDE-specific)
+[*.ts]
+ij_typescript_use_double_quotes = false
+
+# JavaScript: same quote preference in JetBrains
+[*.js]
+ij_javascript_use_double_quotes = false
+
+# Markdown: don't strip trailing spaces (used for hard line breaks), and don't enforce a max line length
+[*.md]
+max_line_length = off
+trim_trailing_whitespace = false

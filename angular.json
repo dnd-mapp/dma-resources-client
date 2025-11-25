@@ -1,98 +1,112 @@
 {
-    "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-    "version": 1,
-    "cli": {
-        "packageManager": "pnpm",
-        "analytics": "9289bda0-e9af-4793-b210-804feaa6b04a"
-    },
-    "projects": {
-        "dma-resources-client": {
-            "projectType": "application",
-            "schematics": {
-                "@schematics/angular:component": {
-                    "style": "scss"
-                }
-            },
-            "root": "",
-            "sourceRoot": "src",
-            "prefix": "dma",
-            "architect": {
-                "build": {
-                    "builder": "@angular/build:application",
-                    "options": {
-                        "allowedCommonJsDependencies": [],
-                        "assets": [
-                            {
-                                "glob": "**/*",
-                                "input": "public"
-                            }
-                        ],
-                        "baseHref": "/app/",
-                        "browser": "src/main.ts",
-                        "inlineStyleLanguage": "scss",
-                        "security": {
-                            "autoCsp": true
-                        },
-                        "styles": ["src/styles.scss"],
-                        "tsConfig": "tsconfig.app.json"
-                    },
-                    "defaultConfiguration": "prod",
-                    "configurations": {
-                        "prod": {
-                            "budgets": [
-                                {
-                                    "type": "initial",
-                                    "maximumWarning": "500kB",
-                                    "maximumError": "1MB"
-                                },
-                                {
-                                    "type": "anyComponentStyle",
-                                    "maximumWarning": "4kB",
-                                    "maximumError": "8kB"
-                                }
-                            ]
-                        },
-                        "dev": {
-                            "extractLicenses": false,
-                            "namedChunks": true,
-                            "optimization": false,
-                            "sourceMap": true,
-                            "watch": true
-                        }
-                    }
-                },
-                "serve": {
-                    "builder": "@angular/build:dev-server",
-                    "options": {
-                        "buildTarget": "dma-resources-client:build:dev",
-                        "host": "localhost.resources.dndmapp.dev",
-                        "port": 4400,
-                        "ssl": true,
-                        "sslCert": "cert.pem",
-                        "sslKey": "key.pem"
-                    }
-                },
-                "test": {
-                    "builder": "@angular/build:unit-test",
-                    "options": {
-                        "buildTarget": "dma-resources-client:build:dev",
-                        "coverage": true,
-                        "runner": "vitest",
-                        "runnerConfig": "vite.config.ts",
-                        "tsConfig": "tsconfig.spec.json"
-                    },
-                    "defaultConfiguration": "ci",
-                    "configurations": {
-                        "ci": {
-                            "watch": false
-                        },
-                        "dev": {
-                            "ui": true,
-                            "watch": true
-                        }
-                    }
-                }
-            }
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "cli": {
+    "packageManager": "pnpm",
+    "analytics": "9289bda0-e9af-4793-b210-804feaa6b04a",
+    "schematicCollections": [
+      "angular-eslint"
+    ]
+  },
+  "projects": {
+    "dma-resources-client": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
         }
+      },
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "dma",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "allowedCommonJsDependencies": [],
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
+            ],
+            "baseHref": "/app/",
+            "browser": "src/main.ts",
+            "inlineStyleLanguage": "scss",
+            "security": {
+              "autoCsp": true
+            },
+            "styles": [
+              "src/styles.scss"
+            ],
+            "tsConfig": "tsconfig.app.json"
+          },
+          "defaultConfiguration": "prod",
+          "configurations": {
+            "prod": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ]
+            },
+            "dev": {
+              "extractLicenses": false,
+              "namedChunks": true,
+              "optimization": false,
+              "sourceMap": true,
+              "watch": true
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "options": {
+            "buildTarget": "dma-resources-client:build:dev",
+            "host": "localhost.resources.dndmapp.dev",
+            "port": 4400,
+            "ssl": true,
+            "sslCert": "cert.pem",
+            "sslKey": "key.pem"
+          }
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "buildTarget": "dma-resources-client:build:dev",
+            "coverage": true,
+            "runner": "vitest",
+            "runnerConfig": "vite.config.ts",
+            "tsConfig": "tsconfig.spec.json"
+          },
+          "defaultConfiguration": "ci",
+          "configurations": {
+            "ci": {
+              "watch": false
+            },
+            "dev": {
+              "ui": true,
+              "watch": true
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
+        }
+      }
     }
+  }
 }

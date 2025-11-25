@@ -1,7 +1,7 @@
 # Compiled output
 .angular/
 dist/
-reports/
+coverage/
 
 # Node
 node_modules/

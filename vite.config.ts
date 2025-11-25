@@ -21,9 +21,9 @@ export default defineConfig({
             include: ['src/**/*.ts'],
             exclude: ['**/index.ts', 'main.ts'],
             provider: 'v8',
-            reporter: ['text-summary', ['html', { subdir: '.' }]],
+            reporter: ['text-summary', ['html', { subdir: 'coverage' }]],
             reportOnFailure: true,
-            reportsDirectory: 'reports/coverage',
+            reportsDirectory: 'coverage/dma-resources-client',
             thresholds: {
                 branches: 80,
                 functions: 80,
@@ -34,7 +34,7 @@ export default defineConfig({
         name: 'dma-resource-client',
         open: false,
         passWithNoTests: true,
-        reporters: ['dot', ['html', { outputFile: 'reports/index.html' }]],
+        reporters: ['dot', ['html', { outputFile: 'coverage/dma-resources-client/index.html' }]],
         sequence: {
             shuffle: true,
         },

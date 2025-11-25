@@ -9,7 +9,7 @@
             }
         },
         {
-            "files": ["package*.json"],
+            "files": ["package*.json", "pnpm-lock.yaml"],
             "options": {
                 "tabWidth": 2
             }

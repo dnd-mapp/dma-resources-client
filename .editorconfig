@@ -9,8 +9,10 @@ insert_final_newline = true
 trim_trailing_whitespace = true
 end_of_line = lf
 
-# JSON files: match Prettier's 2-space override for package*.json
 [package*.json]
+indent_size = 2
+
+[pnpm-lock.yaml]
 indent_size = 2
 
 # TypeScript: prefer single quotes in JetBrains IDEs (optional / IDE-specific)

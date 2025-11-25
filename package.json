@@ -12,10 +12,12 @@
   "scripts": {
     "start": "ng serve",
     "build": "ng build",
-    "build-dev": "ng build -c dev",
+    "build:dev": "ng build -c dev",
     "test": "ng test",
-    "test-dev": "ng test -c dev",
-    "lint": "ng lint"
+    "test:dev": "ng test -c dev",
+    "lint": "ng lint",
+    "format:check": "prettier -l .",
+    "format:write": "prettier -w ."
   },
   "dependencies": {
     "@angular/cdk": "~21.0.0",

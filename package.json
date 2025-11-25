@@ -10,13 +10,11 @@
   },
   "packageManager": "pnpm@10.23.0",
   "scripts": {
-    "ng": "pnpm exec ng",
-    "start": "pnpm exec ng serve",
-    "build": "pnpm exec ng build",
-    "build-dev": "pnpm exec ng build -c dev",
-    "test": "pnpm exec ng test",
-    "test-dev": "pnpm exec ng test -c dev",
-    "test:browser": "vitest --config=vitest.browser.config.ts"
+    "start": "ng serve",
+    "build": "ng build",
+    "build-dev": "ng build -c dev",
+    "test": "ng test",
+    "test-dev": "ng test -c dev"
   },
   "dependencies": {
     "@angular/cdk": "~21.0.0",

@@ -40,7 +40,6 @@ export default defineConfig({
         },
         setupFiles: 'test/setup-test.ts',
         testNamePattern: 'src/**/*.spec.ts',
-        ui: !isCI,
         uiBase: '/dma-resources-client/',
     },
 });

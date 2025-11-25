@@ -87,6 +87,7 @@
                             "watch": false
                         },
                         "dev": {
+                            "ui": true,
                             "watch": true
                         }
                     }

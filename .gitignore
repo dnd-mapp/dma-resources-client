@@ -10,6 +10,7 @@ node_modules/
 .idea/*
 !.idea/runConfigurations/
 !.idea/prettier.xml
+!.idea/jsLinters/
 
 # Visual Studio Code
 .vscode/*

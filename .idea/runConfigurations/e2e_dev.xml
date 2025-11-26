@@ -1,9 +1,9 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="build" type="js.build_tools.npm" folderName="building" nameIsGenerated="true">
+  <configuration default="false" name="e2e:dev" type="js.build_tools.npm" folderName="testing" nameIsGenerated="true">
     <package-json value="$PROJECT_DIR$/package.json" />
     <command value="run" />
     <scripts>
-      <script value="build" />
+      <script value="e2e:dev" />
     </scripts>
     <node-interpreter value="project" />
     <envs />

@@ -1,15 +1,33 @@
 {
-  "name": "dma-resources-client",
+  "name": "@dnd-mapp/dma-resources-client",
   "version": "0.0.0",
-  "private": true,
   "license": "UNLICENSED",
+  "description": "An Angular application for managing static game resources, inspecting logs, and configuring the D&D Mapp Resources Server.",
+  "private": true,
+  "author": {
+    "email": "mail.dndmapp@gmail.com",
+    "name": "NoNamer777"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dnd-mapp/dma-resources-client.git"
+  },
   "engines": {
     "node": ">=24",
     "npm": ">=11",
     "pnpm": "~10"
   },
   "packageManager": "pnpm@10.23.0",
+  "publishConfig": {
+    "directory": "dist/dma-resources-client",
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "files": [
+    "**/*"
+  ],
+  "main": "browser/index.html",
   "scripts": {
+    "prepublishOnly": "node build/pre-publish.mjs",
     "start": "ng serve",
     "docker:build": "docker buildx bake -f .docker/docker-bake.hcl",
     "build": "ng build",

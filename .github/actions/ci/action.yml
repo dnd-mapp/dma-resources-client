@@ -3,6 +3,9 @@ description: Runs Continuous Integration
 runs:
     using: composite
     steps:
+        - name: Setup PNPM
+          uses: pnpm/action-setup@v4
+
         - name: Setup Node.js
           uses: actions/setup-node@v5
           with:
@@ -12,7 +15,7 @@ runs:
 
         - name: Install dependencies
           shell: bash
-          run: pnpm i --frozen-lockfile
+          run: pnpm install --frozen-lockfile
 
         - name: Check formatting
           shell: bash

@@ -30,6 +30,7 @@ jobs:
                   token: ${{ secrets.GITHUB_TOKEN }}
     e2e:
         name: E2E testing
+        # TODO: Enable after test environment has been set up
         if: false
         needs: ci
         runs-on: ubuntu-22.04

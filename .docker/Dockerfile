@@ -1,11 +1,16 @@
 FROM --platform=$BUILDPLATFORM node:24 AS builder
 
+ENV PNPM_HOME="/pnpm"
+    PATH="$PNPM_HOME:$PATH"
+
+RUN corepack enable
+
 WORKDIR /app
 
 COPY package*.json .
 COPY pnpm-lock.yaml .
 
-RUN pnpm i --frozen-lockfile
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
 
 COPY . .
 

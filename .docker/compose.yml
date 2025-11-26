@@ -1,0 +1,9 @@
+services:
+    dma-resources-client:
+        image: ghcr.io/dnd-mapp/dma-resources-client
+        container_name: dma-recourses-client
+        restart: unless-stopped
+        ports:
+            - '4600:80'
+        volumes:
+            - ./config.json:/usr/share/nginx/html/config.json

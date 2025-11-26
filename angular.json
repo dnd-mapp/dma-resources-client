@@ -67,7 +67,7 @@
                     "options": {
                         "buildTarget": "dma-resources-client:build:dev",
                         "host": "localhost.resources.dndmapp.dev",
-                        "port": 4400,
+                        "port": 4600,
                         "ssl": true,
                         "sslCert": "cert.pem",
                         "sslKey": "key.pem"

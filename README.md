@@ -145,6 +145,7 @@ pnpm install
 The following scripts are available via `pnpm`:
 
 - `pnpm start` – start the development server
+- `pnpm docker:build` – locally build a Docker image
 - `pnpm build` – build the production bundle
 - `pnpm test` – run unit tests (Vitest)
 - `pnpm e2e` – run E2E tests (Playwright)
@@ -194,7 +195,7 @@ You will:
 
 ### 1. Install mkcert
 
-Official docs: <https://github.com/FiloSottile/mkcert>
+Official docs: https://github.com/FiloSottile/mkcert
 
 #### macOS
 
@@ -312,15 +313,6 @@ This will create:
 > - The `cert.pem` and `key.pem` files are added to `.gitignore` and they **never** should be committed.
 > - Keep `key.pem` private.
 
-Example `.gitignore` snippet:
-
-```gitignore
-cert.pem
-key.pem
-```
-
-Now configure your dev server (see [Running the dev server over HTTPS](#running-the-dev-server-over-https)) to use these files.
-
 ---
 
 ### 5. Trust the certificate in browsers
@@ -372,8 +364,8 @@ Firefox may use its own certificate store:
 
 After this, visiting:
 
-- https://localhost:4400/app/
-- https://localhost.resources.dndmapp.dev:4400/app/
+- https://localhost:4600/app/
+- https://localhost.resources.dndmapp.dev:4600/app/
 
 should no longer show invalid certificate warnings.
 

@@ -11,6 +11,7 @@
   "packageManager": "pnpm@10.23.0",
   "scripts": {
     "start": "ng serve",
+    "docker:build": "docker buildx bake -f .docker/docker-bake.hcl",
     "build": "ng build",
     "build:dev": "ng build -c dev",
     "test": "ng test",

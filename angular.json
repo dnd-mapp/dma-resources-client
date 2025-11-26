@@ -24,8 +24,8 @@
                         "allowedCommonJsDependencies": [],
                         "assets": [
                             {
-                                "glob": "**/*",
-                                "input": "public"
+                                "input": "public",
+                                "glob": "**/*"
                             }
                         ],
                         "baseHref": "/app/",

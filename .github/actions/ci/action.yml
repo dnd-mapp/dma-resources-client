@@ -1,0 +1,33 @@
+name: CI
+description: Runs Continuous Integration
+runs:
+    using: composite
+    steps:
+        - name: Setup Node.js
+          uses: actions/setup-node@v5
+          with:
+              cache: pnpm
+              node-version-file: .tool-versions
+              cache-dependency-path: pnpm-lock.yaml
+
+        - name: Install dependencies
+          shell: bash
+          run: pnpm i --frozen-lockfile
+
+        - name: Check formatting
+          shell: bash
+          run: pnpm format:check
+
+        - name: Check linting
+          shell: bash
+          run: pnpm lint
+
+        - name: Compile code
+          shell: bash
+          run: pnpm build
+
+        - name: Run tests
+          shell: bash
+          run: |
+              playwright install chromium
+              pnpm test

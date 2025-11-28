@@ -32,4 +32,7 @@ target "default" {
     cache-to = [
         "type=gha,mode=max,repository=dnd-mapp/dma-resources-client"
     ]
+    secrets = [
+        "id=ACTIONS_RUNTIME_TOKEN"
+    ]
 }

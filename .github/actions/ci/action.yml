@@ -3,24 +3,6 @@ description: Runs Continuous Integration
 runs:
     using: composite
     steps:
-        - name: Setup PNPM
-          uses: pnpm/action-setup@v4
-
-        - name: Setup Node.js
-          uses: actions/setup-node@v5
-          with:
-              cache: 'pnpm'
-              node-version-file: '.tool-versions'
-              cache-dependency-path: 'pnpm-lock.yaml'
-              scope: '@dnd-mapp'
-              registry-url: 'https://npm.pkg.github.com'
-
-        - name: Install dependencies
-          shell: bash
-          env:
-              NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          run: pnpm install
-
         - name: Check formatting
           shell: bash
           run: pnpm format:check

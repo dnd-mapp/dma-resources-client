@@ -1,0 +1,26 @@
+name: CI
+description: Runs Continuous Integration
+inputs:
+    token:
+        description: The token to use as password when logging into the GHCR to fetch private packages
+        required: true
+runs:
+    using: composite
+    steps:
+        - name: Setup PNPM
+          uses: pnpm/action-setup@v4
+
+        - name: Setup Node.js
+          uses: actions/setup-node@v5
+          with:
+              cache: 'pnpm'
+              node-version-file: '.tool-versions'
+              cache-dependency-path: 'pnpm-lock.yaml'
+              scope: '@dnd-mapp'
+              registry-url: 'https://npm.pkg.github.com'
+
+        - name: Install dependencies
+          shell: bash
+          env:
+              NODE_AUTH_TOKEN: ${{ inputs.token }}
+          run: pnpm install

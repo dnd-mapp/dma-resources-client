@@ -14,6 +14,11 @@ jobs:
             - name: Checkout repository
               uses: actions/checkout@v5
 
+            - name: Setup environment
+              uses: ./.github/actions/setup-environment
+              with:
+                  token: ${{ secrets.GITHUB_TOKEN }}
+
             - name: CI
               uses: ./.github/actions/ci
     docker-build:
@@ -38,18 +43,10 @@ jobs:
             - name: Checkout repository
               uses: actions/checkout@v5
 
-            - name: Setup PNPM
-              uses: pnpm/action-setup@v4
-
-            - name: Setup Node.js
-              uses: actions/setup-node@v5
+            - name: Setup environment
+              uses: ./.github/actions/setup-environment
               with:
-                  cache: pnpm
-                  node-version-file: .tool-versions
-                  cache-dependency-path: pnpm-lock.yaml
-
-            - name: Install dependencies
-              run: pnpm install
+                  token: ${{ secrets.GITHUB_TOKEN }}
 
             - name: Run E2E tests
               run: |

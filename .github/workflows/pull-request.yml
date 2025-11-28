@@ -3,6 +3,7 @@ on:
     pull_request:
 permissions:
     contents: read
+    packages: read
 jobs:
     ci:
         name: CI
@@ -10,6 +11,11 @@ jobs:
         steps:
             - name: Checkout repository
               uses: actions/checkout@v5
+
+            - name: Setup environment
+              uses: ./.github/actions/setup-environment
+              with:
+                  token: ${{ secrets.GITHUB_TOKEN }}
 
             - name: CI
               uses: ./.github/actions/ci

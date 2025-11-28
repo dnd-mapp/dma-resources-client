@@ -37,15 +37,10 @@ jobs:
             - name: Checkout repository
               uses: actions/checkout@v5
 
-            - name: Setup PNPM
-              uses: pnpm/action-setup@v4
-
-            - name: Setup Node.js
-              uses: actions/setup-node@v5
+            - name: Setup environment
+              uses: ./.github/actions/setup-environment
               with:
-                  cache: pnpm
-                  node-version-file: .tool-versions
-                  cache-dependency-path: pnpm-lock.yaml
+                  token: ${{ secrets.GITHUB_TOKEN }}
 
             - name: Generate GitHub app token
               id: token
@@ -147,17 +142,10 @@ jobs:
                   ref: main
                   fetch-depth: 0
 
-            - name: Setup Node.js
-              uses: actions/setup-node@v5
+            - name: Setup environment
+              uses: ./.github/actions/setup-environment
               with:
-                  cache: 'pnpm'
-                  node-version-file: '.tool-versions'
-                  cache-dependency-path: 'pnpm-lock.yaml'
-                  scope: '@dnd-mapp'
-                  registry-url: 'https://npm.pkg.github.com'
-
-            - name: Install dependencies
-              run: pnpm install
+                  token: ${{ secrets.GITHUB_TOKEN }}
 
             - name: Compile code
               run: pnpm build

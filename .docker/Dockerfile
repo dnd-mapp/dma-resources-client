@@ -7,7 +7,7 @@ WORKDIR /app
 COPY package*.json .
 COPY pnpm-lock.yaml .
 
-RUN --mount=type=secret,id=NODE_AUTH_TOKEN \
+RUN --mount=type=secret,id=NODE_AUTH_TOKEN,env=NODE_AUTH_TOKEN \
     pnpm install --frozen-lockfile
 
 COPY . .

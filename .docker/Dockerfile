@@ -1,8 +1,5 @@
 FROM --platform=$BUILDPLATFORM node:24 AS builder
 
-ENV PNPM_HOME="/pnpm"
-    PATH="$PNPM_HOME:$PATH"
-
 RUN corepack enable
 
 WORKDIR /app
@@ -10,7 +7,7 @@ WORKDIR /app
 COPY package*.json .
 COPY pnpm-lock.yaml .
 
-RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
+RUN pnpm install --frozen-lockfile
 
 COPY . .
 

@@ -157,7 +157,7 @@ jobs:
                   registry-url: 'https://npm.pkg.github.com'
 
             - name: Install dependencies
-              run: pnpm install --frozen-lockfile
+              run: pnpm install
 
             - name: Compile code
               run: pnpm build

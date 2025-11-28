@@ -14,11 +14,12 @@ runs:
               cache-dependency-path: 'pnpm-lock.yaml'
               scope: '@dnd-mapp'
               registry-url: 'https://npm.pkg.github.com'
-              token: secrets.GITHUB_TOKEN
 
         - name: Install dependencies
           shell: bash
-          run: pnpm install --frozen-lockfile
+          env:
+              NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          run: pnpm install
 
         - name: Check formatting
           shell: bash

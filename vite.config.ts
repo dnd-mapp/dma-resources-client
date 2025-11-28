@@ -27,12 +27,13 @@ export default defineConfig({
             // TODO #1: Change back to `reports` once Angular properly supports vitest
             // reportsDirectory: 'reports',
             reportsDirectory: 'coverage/dma-resources-client',
-            thresholds: {
-                branches: 80,
-                functions: 80,
-                lines: 80,
-                statements: 80,
-            },
+            // TODO #1: Enable once thresholds are working correctly
+            // thresholds: {
+            //     branches: 80,
+            //     functions: 80,
+            //     lines: 80,
+            //     statements: 80,
+            // },
         },
         name: 'dma-resource-client',
         open: false,

@@ -77,6 +77,7 @@
                     "builder": "@angular/build:unit-test",
                     "options": {
                         "buildTarget": "dma-resources-client:build:dev",
+                        "coverage": true,
                         "runner": "vitest",
                         "runnerConfig": "vite.config.ts",
                         "tsConfig": "tsconfig.spec.json"
@@ -85,7 +86,8 @@
                     "configurations": {
                         "ci": {},
                         "dev": {
-                            "watch": true
+                            "watch": true,
+                            "ui": true
                         }
                     }
                 },

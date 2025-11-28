@@ -17,13 +17,16 @@ export default defineConfig({
         coverage: {
             clean: true,
             cleanOnRerun: true,
-            enabled: true,
+            // TODO #1: Enable once Angular supports it
+            // enabled: true,
             include: ['src/**/*.ts'],
             exclude: ['**/index.ts', 'main.ts'],
             provider: 'v8',
             reporter: ['text-summary', ['html', { subdir: 'coverage' }]],
             reportOnFailure: true,
-            reportsDirectory: 'reports',
+            // TODO #1: Change back to `reports` once Angular properly supports vitest
+            // reportsDirectory: 'reports',
+            reportsDirectory: 'coverage/dma-resources-client',
             thresholds: {
                 branches: 80,
                 functions: 80,
@@ -34,13 +37,16 @@ export default defineConfig({
         name: 'dma-resource-client',
         open: false,
         passWithNoTests: true,
-        reporters: ['dot', ['html', { outputFile: 'reports/index.html' }]],
+        // TODO #1: Change back to `reports/index.html` once Angular properly supports vitest
+        // reporters: ['dot', ['html', { outputFile: 'reports/index.html' }]],
+        reporters: ['dot', ['html', { outputFile: 'coverage/dma-resources-client/index.html' }]],
         sequence: {
             shuffle: true,
         },
         setupFiles: 'test/setup-test.ts',
         testNamePattern: 'src/**/*.spec.ts',
-        ui: !isCI,
+        // TODO #1: Enable once Angular supports it
+        // ui: !isCI,
         uiBase: '/dma-resources-client/',
     },
 });

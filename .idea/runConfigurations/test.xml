@@ -6,7 +6,9 @@
       <script value="test" />
     </scripts>
     <node-interpreter value="project" />
-    <envs />
+    <envs>
+      <env name="CI" value="&quot;true&quot;" />
+    </envs>
     <EXTENSION ID="com.github.l34130.mise.core.run.MiseRunConfigurationSettingsEditor" myConfigEnvironmentStrategy="use_project_settings" myMiseDirEnvCb="false" myMiseConfigEnvironmentTf="" />
     <method v="2" />
   </configuration>

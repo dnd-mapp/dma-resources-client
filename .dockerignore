@@ -11,3 +11,4 @@
 !pnpm-lock.yaml
 !tsconfig.app.json
 !tsconfig.json
+!.npmrc

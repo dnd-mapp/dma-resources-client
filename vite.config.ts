@@ -23,7 +23,7 @@ export default defineConfig({
             provider: 'v8',
             reporter: ['text-summary', ['html', { subdir: 'coverage' }]],
             reportOnFailure: true,
-            reportsDirectory: 'coverage/dma-resources-client',
+            reportsDirectory: 'reports',
             thresholds: {
                 branches: 80,
                 functions: 80,
@@ -34,12 +34,13 @@ export default defineConfig({
         name: 'dma-resource-client',
         open: false,
         passWithNoTests: true,
-        reporters: ['dot', ['html', { outputFile: 'coverage/dma-resources-client/index.html' }]],
+        reporters: ['dot', ['html', { outputFile: 'reports/index.html' }]],
         sequence: {
             shuffle: true,
         },
         setupFiles: 'test/setup-test.ts',
         testNamePattern: 'src/**/*.spec.ts',
+        ui: !isCI,
         uiBase: '/dma-resources-client/',
     },
 });

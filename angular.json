@@ -77,18 +77,14 @@
                     "builder": "@angular/build:unit-test",
                     "options": {
                         "buildTarget": "dma-resources-client:build:dev",
-                        "coverage": true,
                         "runner": "vitest",
                         "runnerConfig": "vite.config.ts",
                         "tsConfig": "tsconfig.spec.json"
                     },
                     "defaultConfiguration": "ci",
                     "configurations": {
-                        "ci": {
-                            "watch": false
-                        },
+                        "ci": {},
                         "dev": {
-                            "ui": true,
                             "watch": true
                         }
                     }

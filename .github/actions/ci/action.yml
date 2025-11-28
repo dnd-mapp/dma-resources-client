@@ -14,14 +14,7 @@ runs:
               cache-dependency-path: 'pnpm-lock.yaml'
               scope: '@dnd-mapp'
               registry-url: 'https://npm.pkg.github.com'
-
-        - name: Configure auth token
-          shell: bash
-          run: |
-              cat <<EOF > ~/.npmrc
-              @dnd-mapp:registry=https://npm.pkg.github.com/
-              //npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}
-              EOF
+              token: secrets.GITHUB_TOKEN
 
         - name: Install dependencies
           shell: bash

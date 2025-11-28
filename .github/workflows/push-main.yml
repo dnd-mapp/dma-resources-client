@@ -50,5 +50,5 @@ jobs:
 
             - name: Run E2E tests
               run: |
-                  playwright install chromium
+                  pnpm exec playwright install chromium
                   pnpm e2e

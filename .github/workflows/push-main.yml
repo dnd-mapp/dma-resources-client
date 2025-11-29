@@ -29,6 +29,9 @@ jobs:
             - name: Checkout repository
               uses: actions/checkout@v5
 
+            - name: Prepare npm config
+              run: echo "//npm.pkg.github.com/:_authToken=${{ inputs.token }}" >> .npmrc
+
             - name: Build and push Docker image
               uses: ./.github/actions/docker-build
               with:

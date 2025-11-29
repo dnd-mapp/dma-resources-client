@@ -21,8 +21,9 @@ runs:
         - name: Set up Docker Buildx
           uses: docker/setup-buildx-action@v3
 
-        - shell: bash
-          run: cat .npmrc
+        - name: Print npm config
+          shell: bash
+          run: cat $GITHUB_WORKSPACE/.npmrc
 
         - name: Build and Push
           uses: docker/bake-action@v6

@@ -33,4 +33,5 @@ runs:
               TAGS: ${{ inputs.tags }}
           with:
               files: .docker/docker-bake.hcl
+              no-cache: true
               push: true

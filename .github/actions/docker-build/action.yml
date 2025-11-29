@@ -23,12 +23,11 @@ runs:
 
         - name: Prepare npm config
           shell: bash
-          run: echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" >> .npmrc
+          run: echo "//npm.pkg.github.com/:_authToken=${{ inputs.token }}" >> .npmrc
 
         - name: Build and Push
           uses: docker/bake-action@v6
           env:
-              NODE_AUTH_TOKEN: ${{ inputs.token }}
               TAGS: ${{ inputs.tags }}
           with:
               files: .docker/docker-bake.hcl

@@ -21,6 +21,14 @@ jobs:
 
             - name: CI
               uses: ./.github/actions/ci
+
+            - name: Upload build output
+              uses: actions/upload-artifact@v5
+              with:
+                  name: build-output
+                  path: ./dist
+                  retention-days: 1
+                  overwrite: true
     docker-build:
         name: Build and push Docker image
         needs: ci

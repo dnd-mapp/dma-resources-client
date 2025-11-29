@@ -1,14 +1,5 @@
 *
 
-!public/
-!src/
-
+!dist/
 !.docker/config.json
 !.docker/nginx.conf
-!.docker/README.md
-!angular.json
-!package.json
-!pnpm-lock.yaml
-!tsconfig.app.json
-!tsconfig.json
-!.npmrc

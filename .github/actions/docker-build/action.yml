@@ -27,14 +27,11 @@ runs:
               name: build-output
               path: ./dist
 
-        - name: Validate build output present
-          shell: bash
-          run: cat dist/dma-resources-client/browser/index.html
-
         - name: Build and Push
           uses: docker/bake-action@v6
           env:
               TAGS: ${{ inputs.tags }}
           with:
+              source: .
               files: .docker/docker-bake.hcl
               push: true

@@ -21,17 +21,15 @@ runs:
         - name: Set up Docker Buildx
           uses: docker/setup-buildx-action@v3
 
-        - name: Print npm config
+        - name: Prepare npm config
           shell: bash
-          run: cat $GITHUB_WORKSPACE/.npmrc
+          run: echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" >> .npmrc
 
         - name: Build and Push
           uses: docker/bake-action@v6
           env:
-              ACTIONS_RUNTIME_TOKEN: ${{ inputs.token }}
-              ACTIONS_CACHE_SERVICE_V2: true
+              NODE_AUTH_TOKEN: ${{ inputs.token }}
               TAGS: ${{ inputs.tags }}
           with:
               files: .docker/docker-bake.hcl
-              no-cache: true
               push: true

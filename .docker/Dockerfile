@@ -4,9 +4,7 @@ RUN corepack enable
 
 WORKDIR /app
 
-COPY package*.json .
-COPY pnpm-lock.yaml .
-COPY .npmrc .
+COPY package*.json pnpm-lock.yaml .npmrc ./
 
 RUN --mount=type=secret,id=NODE_AUTH_TOKEN,env=NODE_AUTH_TOKEN \
     pnpm install --frozen-lockfile

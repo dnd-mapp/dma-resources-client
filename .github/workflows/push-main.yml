@@ -30,7 +30,10 @@ jobs:
               uses: actions/checkout@v5
 
             - name: Prepare npm config
-              run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> .npmrc
+              run: |
+                  cat .npmrc
+                  echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> .npmrc
+                  cat .npmrc
 
             - name: Build and push Docker image
               uses: ./.github/actions/docker-build

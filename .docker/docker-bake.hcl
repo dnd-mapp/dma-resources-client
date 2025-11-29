@@ -32,7 +32,4 @@ target "default" {
     cache-to = [
         "type=gha,mode=max,repository=dnd-mapp/dma-resources-client"
     ]
-    secrets = [
-        "type=env,id=NODE_AUTH_TOKEN,env=ACTIONS_RUNTIME_TOKEN"
-    ]
 }

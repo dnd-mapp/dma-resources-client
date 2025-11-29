@@ -1,5 +1,5 @@
 *
 
-!dist/
+!dist/**/*
 !.docker/config.json
 !.docker/nginx.conf

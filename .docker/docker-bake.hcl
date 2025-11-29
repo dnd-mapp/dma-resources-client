@@ -33,6 +33,6 @@ target "default" {
         "type=gha,mode=max,repository=dnd-mapp/dma-resources-client"
     ]
     secrets = [
-        "typr=env,id=NODE_AUTH_TOKEN,env=ACTIONS_RUNTIME_TOKEN"
+        "type=env,id=NODE_AUTH_TOKEN,env=ACTIONS_RUNTIME_TOKEN"
     ]
 }
